@@ -1649,29 +1649,13 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(hideLoadingSpinner, 4000); // Hide after 2 seconds (you can adjust this value as needed)
     }); 
     
-    
     function logout() {
-    // Fetch the logout endpoint on the backend
-    fetch('/logout', {
-        method: 'GET', // Use GET since we're accessing the logout endpoint
-        headers: {
-            'Content-Type': 'application/json',
-            'X-XSRF-TOKEN': document.querySelector('meta[name="_csrf"]').content // Include the CSRF token as a header
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Logout successful, redirect to the login page
-            window.location.href = '/login'; // Redirect to the login page using Thymeleaf URL expression
-        } else {
-            alert('Error logging out. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred while logging out. Please try again.');
-    });
+    // Redirect the user to the login page, effectively logging them out
+    window.location.href = 'https://flight-ticket-booking-vamsi-battu.up.railway.app/login';
 }
+
+    
+
 
     
     
