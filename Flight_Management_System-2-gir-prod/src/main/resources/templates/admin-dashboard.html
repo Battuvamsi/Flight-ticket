@@ -256,6 +256,7 @@
                 <th>Username</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th style="padding-left: 90px;">Role</th>
             </tr>
         </thead>
         <tbody id="customerTableBody">
@@ -590,6 +591,7 @@
                         <td>${customer.username}</td>
                         <td>${customer.customer_email}</td>
                         <td>${customer.customer_phone}</td>
+                        <td>${customer.role}</td>
                     `;
                     customerTableBody.appendChild(row);
                 });
