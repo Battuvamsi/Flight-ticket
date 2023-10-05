@@ -1651,27 +1651,28 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
     function logout() {
-        // Fetch the logout endpoint on the backend
-        fetch('/logout', {
-            method: 'GET', // Use GET since we're accessing the logout endpoint
-            headers: {
-                'Content-Type': 'application/json',
-                'X-XSRF-TOKEN': document.querySelector('meta[name="_csrf"]').content // Include the CSRF token as a header
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                // Logout successful, redirect to the login page
-                window.location.href = '/login'; // Redirect to the login page using Thymeleaf URL expression
-            } else {
-                alert('Error logging out. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while logging out. Please try again.');
-        });
-    }
+    // Fetch the logout endpoint on the backend
+    fetch('/logout', {
+        method: 'GET', // Use GET since we're accessing the logout endpoint
+        headers: {
+            'Content-Type': 'application/json',
+            'X-XSRF-TOKEN': document.querySelector('meta[name="_csrf"]').content // Include the CSRF token as a header
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Logout successful, redirect to the login page
+            window.location.href = '/login'; // Redirect to the login page using Thymeleaf URL expression
+        } else {
+            alert('Error logging out. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while logging out. Please try again.');
+    });
+}
+
     
     
    //importent never delete 
